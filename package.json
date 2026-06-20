@@ -1,14 +1,39 @@
 {
   "name": "mcp-pixel-img",
   "version": "1.0.0",
-  "description": "MCP server for pixel-img — HTTP/SSE transport for remote hosting",
+  "description": "MCP server for pixel-img — generate images from HTML/CSS templates via Claude",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "mcp-pixel-img": "dist/index.js"
+  },
   "scripts": {
     "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist/index.js --banner:js='#!/usr/bin/env node'",
     "start": "node dist/index.js",
-    "dev": "node --watch --experimental-strip-types src/index.ts"
+    "dev": "node --watch --experimental-strip-types src/index.ts",
+    "prepublishOnly": "npm run build"
   },
+  "files": [
+    "dist/index.js",
+    "README.md",
+    ".env.example"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pixel-img",
+    "image-generation",
+    "html-to-image",
+    "claude",
+    "ai"
+  ],
+  "author": "Oliviercreativ",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Oliviercreativ/mcp-pixel-img.git"
+  },
+  "homepage": "https://github.com/Oliviercreativ/mcp-pixel-img",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "express": "^4.19.2",
@@ -19,5 +44,8 @@
     "@types/node": "^22.0.0",
     "esbuild": "^0.24.0",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

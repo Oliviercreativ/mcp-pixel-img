@@ -74,7 +74,16 @@ Add this to your `~/.claude.json` (Claude Code):
 
 If `MCP_SECRET` is not set, omit the `headers` block.
 
-## Run locally
+## Quick start with npx
+
+```bash
+PIXEL_IMG_URL=https://pixel-img.vercel.app \
+PIXEL_IMG_API_KEY=your_api_password \
+MCP_SECRET=your_secret \
+npx mcp-pixel-img
+```
+
+## Run locally (from source)
 
 ```bash
 # Clone and install
